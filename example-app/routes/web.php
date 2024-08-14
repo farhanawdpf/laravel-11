@@ -22,3 +22,4 @@ Route::get('/home', function () {
 Route::get('/user', function () {
     return view('user');
 });
+
