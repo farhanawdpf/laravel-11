@@ -16,17 +16,3 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/user', function () {
-    return view('user');
-});
-Route::get('/add-user', function () {
-    return view('pages.user.add_user');
-});
-// Route::get('/', [StudentController::class, 'index']);
-
-// Route::get('create', [StudentController::class, 'create'])->name('create');
-// Route::post('store', [StudentController::class, 'store'])->name('store');
-
