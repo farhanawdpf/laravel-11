@@ -11,7 +11,7 @@ class UserController extends Controller
     {
 
         // $users = Phone::find(1);
-        $users = Phone::find(1)->user;
+        // $users = Phone::find(1)->user;
         $users = User::all();
         // return $users;
         return view('user', compact('users'));

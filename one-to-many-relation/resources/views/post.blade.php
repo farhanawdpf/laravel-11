@@ -19,21 +19,21 @@
         <table class="table table-striped">
             <thead>
               <tr>
-                <th>Name</th>
-                <th>Detais</th>
-                <th>Phone Id</th>
-                <th>Phone name</th>
-                <th>Phone Details</th>
+                <th>Id</th>
+                <th>Post</th>
+                <th>comments</th>
               </tr>
             </thead>
             <tbody>
-                @foreach( $users as $data)
+                @foreach( $post as $data)
               <tr>
+                <td>{{ $data->id}}</td>
                 <td>{{ $data->name}}</td>
-                <td>{{ $data->details}}</td>
-                <td>{{ $data->phone->id}}</td>
-                <td>{{ $data->phone->name}}</td>
-                <td>{{ $data->phone->details}}</td>
+                <td>
+                    @foreach( $data->comments as $d)
+                        {{ $d->name}} </br>
+                    @endforeach
+                </td>
                 <td></td>
               </tr>
                @endforeach

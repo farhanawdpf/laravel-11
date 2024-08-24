@@ -9,6 +9,6 @@ class User extends Model
 {
     use HasFactory;
     public function phone (){
-        return $this->hasOne(Phone::class);
+        return $this->hasOne(Phone::class,'userp_id');
     }
 }
