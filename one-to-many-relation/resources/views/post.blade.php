@@ -30,9 +30,9 @@
                 <td>{{ $data->id}}</td>
                 <td>{{ $data->name}}</td>
                 <td>
-                    @foreach( $data->comments as $d)
-                        {{ $d->name}} </br>
-                    @endforeach
+                @foreach( $data->comments as $coms)
+                    {{ $coms->name}},
+                @endforeach
                 </td>
                 <td></td>
               </tr>
