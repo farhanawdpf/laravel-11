@@ -11,6 +11,7 @@ class UserController extends Controller
    public function index () {
     $users =Role::with('users')->get();
     // dd($users);
-    return $users;
+    // return $users;
+    return view('user', compact('users'));
    }
 }
