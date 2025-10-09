@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\student;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -11,7 +13,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+       $students = student::all();
+        // dd($students->toArray());
+        return view('index',compact('students'));
     }
 
     /**
@@ -57,8 +61,12 @@ class HomeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Request $request)
     {
-        //
+         {
+        $student = student::find($request->student_id);
+        $student->delete();
+        return Redirect::to('/');
+    }
     }
 }
