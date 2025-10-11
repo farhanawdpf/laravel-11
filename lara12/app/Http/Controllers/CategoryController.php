@@ -34,23 +34,25 @@ class CategoryController extends Controller{
         return Redirect::to('/');
     }
 
-    // public function update($catagory_id)
-    // {
-    //     $cat = Category::find($catagory_id);
-    //     return view('edit',compact('cat'));
-    // }
-    // public function editStore(Request $request)
-    // {
-    //    $cat = Category::find($request->catagory_id);
-    //     $cat->name = $request->name;
-    //     $cat->details = $request->details;
-    //     $cat->save();
-    //     return Redirect::to('/');
-    // }
+    public function update($catagory_id)
+    {
+        $cat = Category::find($catagory_id);
+        return view('edit',compact('cat'));
+    }
+
+
+    public function editStore(Request $request)
+    {
+       $cat = Category::find($request->catagory_id);
+        $cat->name = $request->name;
+        $cat->details = $request->details;
+        $cat->save();
+        return Redirect::to('/');
+    }
     public function destroy(Request $request)
     {
-        $student = Category::find($request->catagory_id);
-        $student->delete();
+        $cat = Category::find($request->catagory_id);
+        $cat->delete();
         return Redirect::to('/');
     }
 }

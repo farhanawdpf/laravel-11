@@ -11,28 +11,36 @@
  <title>Laravel CRUD</title>
   </head>
   <body>
-      <div class="text-center">
+       <div class="text-center">
 
-        <p>Please Insert category</p>
+        <p>Update category</p>
 
       </div>
 
       <div class="container">
-        <form method="POST" action="{{ route('store') }}">
+        <form method="POST" action="{{ route('editStore') }}">
           @csrf
+
+            <input type="text" name="catagory_id" hidden value="{{ $cat->id }}">
             <div class="mb-3">
-              <label for="detailsa" class="form-label">Name</label>
-              <input type="text" name="name" class="form-control"  required>
+              <label for="exampleInputEmail1" class="form-label">Name</label>
+              <input type="text" name="name" class="form-control"  required value="{{ $cat->name }}">
 
             </div>
             <div class="mb-3">
-                <label for="detailsa" class="form-label">Details</label>
-                <input type="text" name="details" class="form-control" required >
-
+                <label for="exampleInputEmail1" class="form-label">Details</label>
+                <input type="text" name="details" class="form-control"  required value="{{ $cat->details }}">
               </div>
+
+
+
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
       </div>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
   </body>
 </html>
