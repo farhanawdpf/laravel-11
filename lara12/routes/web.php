@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OneToOneController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +21,9 @@ Route::get('/welcome', function () {
 
 Route::get('/home', [HomeController::class, 'index']);
 //  category
-Route::get('/', [CategoryController::class, 'index']);
+Route::get('/catete', [CategoryController::class, 'index']);
+
+Route::get('/phone', [OneToOneController::class, 'index']);
 
 Route::get('create', [CategoryController::class, 'create'])->name('create');
 Route::post('store', [CategoryController::class, 'store'])->name('store');
