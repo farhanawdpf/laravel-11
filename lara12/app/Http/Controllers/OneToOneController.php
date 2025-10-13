@@ -9,8 +9,10 @@ class OneToOneController extends Controller
 {
     public function index()
     {
-        $phone = Category::all();
-        return $phone;
+        $users = Category::all();
+        //    return  $users;
+         return view('index',compact('users'));
+
     }
 
 

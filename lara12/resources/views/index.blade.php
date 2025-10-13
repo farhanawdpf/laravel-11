@@ -29,34 +29,34 @@
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
                 <th scope="col">details</th>
-                <th scope="col">Action</th>
+                <th scope="col">Name</th>
+                <th scope="col">details</th>
               </tr>
             </thead>
             <tbody>
 
-             @foreach ($cats as $single )
+             @foreach ($post as $single )
 
               <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
                 <!-- <td>{{ $single->id }}</td> -->
                 <td>{{ $single->name }}</td>
                 <td>{{ $single->details }} </td>
+                <!-- <td>{{ $single->comments }} </td> -->
 
                 <td>
-                    <div class="btn-group">
-                      <a href="{{ route('edit', $single->id) }}">
-                        <button class="btn btn-md btn-success me-1 p-1">edit</button>
-                      </a>
+                    @foreach ($single->comments as $c )
 
-                    <form action="{{route('delete')}}" method="POST">
-                        @method('DELETE')
-                        @csrf
-                        <input type="text" name="catagory_id" value="{{ $single->id }}" hidden>
-                      <button class="btn btn-md btn-danger  p-1">delete</button>
-                </form>
+                    {{ $c->name }} <br>
+                   @endforeach
 
+                </td>
+                <td>
+                    @foreach ($single->comments as $c )
 
-                    </div>
+                    {{ $c->details }} <br>
+                   @endforeach
+
                 </td>
               </tr>
 

@@ -13,6 +13,6 @@ class Category extends Model
 
      public function phone()
     {
-        return $this->belongsTo(Phone::class);
+        return $this->hasOne(Phone::class);
     }
 }
