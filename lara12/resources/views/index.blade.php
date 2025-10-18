@@ -27,37 +27,25 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">details</th>
-                <th scope="col">Name</th>
-                <th scope="col">details</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Brand NAme</th>
               </tr>
             </thead>
             <tbody>
 
-             @foreach ($post as $single )
+             @foreach ($product as $single )
 
               <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
                 <!-- <td>{{ $single->id }}</td> -->
                 <td>{{ $single->name }}</td>
-                <td>{{ $single->details }} </td>
-                <!-- <td>{{ $single->comments }} </td> -->
-
                 <td>
-                    @foreach ($single->comments as $c )
-
-                    {{ $c->name }} <br>
-                   @endforeach
+                       @foreach ($single->brands as $b )
+                          {{ $b->name }},
+                        @endforeach
 
                 </td>
-                <td>
-                    @foreach ($single->comments as $c )
 
-                    {{ $c->details }} <br>
-                   @endforeach
-
-                </td>
               </tr>
 
               @endforeach

@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\OneToOneController;
 use App\Http\Controllers\OneToManyController;
+use App\Http\Controllers\ManyToManyController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,6 +27,7 @@ Route::get('/catete', [CategoryController::class, 'index']);
 
 Route::get('/phone', [OneToOneController::class, 'index']);
 Route::get('/post', [OneToManyController::class, 'index']);
+Route::get('/product', [ManyToManyController::class, 'index']);
 
 Route::get('create', [CategoryController::class, 'create'])->name('create');
 Route::post('store', [CategoryController::class, 'store'])->name('store');
